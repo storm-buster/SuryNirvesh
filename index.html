@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarShares</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqk1Q27o42mPksgDnA2hi+i8yXf3LqSZ32KabYO+uC+t9m7Xc2vh+Y58XYo1u2j5/i4eAQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primary-color: #f44336;
+            --secondary-color: #333;
+            --background-color: #f2f2f2;
+            --text-color: #333;
+            --white-color: #fff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Updated Hero Section to act as header with navigation */
+        .hero {
+            position: relative;
+            background-image: url("https://lot.dhl.com/wp-content/uploads/2024/08/lot_66d19772027f52.29236814-800x420.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+            padding: 20px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for header effect */
+        }
+
+        /* Navigation inside Hero */
+        .hero nav {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hero nav a {
+            color: var(--white-color);
+            font-weight: 500;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+
+        .hero nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin: 0 0 15px;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .cta-button {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 20px;
+            background-color: var(--white-color);
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .features ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .features li {
+            flex: 1 1 200px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .features li:hover {
+            transform: translateY(-5px);
+        }
+
+        .features i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Call to Action */
+        .call-to-action {
+            padding: 40px 20px;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            text-align: center;
+        }
+
+        .call-to-action h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .call-to-action p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .call-to-action .cta-button {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-to-action .cta-button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 0;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            color: #d32f2f;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .features ul {
+                flex-direction: column;
+            }
+
+            .features li {
+                margin-bottom: 20px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section with Navigation -->
+    <main>
+        <section class="hero">
+            <!-- Navigation Menu inside Hero Section -->
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="login.html" class="cta-button">Invest Now</a></li>
+                </ul>
+            </nav>
+
+            <h2>Welcome to SuryNirvesh</h2>
+            <p>Invest in a sustainable future with our solar energy solutions.</p>
+            <a href="signup.html" class="cta-button">SignUp</a>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2>Our Features</h2>
+                <ul>
+                    <li><i class="fas fa-sun"></i> Renewable Energy</li>
+                    <li><i class="fas fa-chart-line"></i> High Returns</li>
+                    <li><i class="fas fa-lock"></i> Secure Investments</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <h2>Get Started Today</h2>
+            <p>Join thousands who have already invested in solar energy.</p>
+            <a href="#" class="cta-button">Learn More</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 SolarShares. All rights reserved.</p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>

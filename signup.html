@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup | suryanivesh</title>
+    <style>
+        /* Same styling as before */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #59bea4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .signup-container {
+            background-color: #5abda4;
+            padding: 20px;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="text"], input[type="date"], input[type="email"], input[type="tel"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .otp-field {
+            display: none;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="signup-container">
+    <h2>SuryNivesh</h2>
+    <form id="signupForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" oninput="checkAndShowOtpField('mobile', 'mobileOtp')">
+
+        <div id="mobileOtp" class="otp-field">
+            <label for="mobile_otp">Enter Mobile OTP</label>
+            <input type="number" id="mobile_otp" name="mobile_otp">
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required oninput="checkAndShowOtpField('email', 'emailOtp')">
+
+        <div id="emailOtp" class="otp-field">
+            <label for="email_otp">Enter Email OTP</label>
+            <input type="number" id="email_otp" name="email_otp">
+        </div>
+
+        <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+</div>
+
+<script>
+    // Function to validate input and show OTP field if valid
+    function checkAndShowOtpField(inputId, otpFieldId) {
+        const inputField = document.getElementById(inputId);
+        const otpField = document.getElementById(otpFieldId);
+
+        if ((inputId === 'mobile' && inputField.value.length === 10) || 
+            (inputId === 'email' && inputField.validity.valid)) {
+            otpField.style.display = 'block';
+            otpField.querySelector('input').setAttribute('required', 'true');
+        } else {
+            otpField.style.display = 'none';
+            otpField.querySelector('input').removeAttribute('required');
+        }
+    }
+
+    // Redirect to invest.html when the form is submitted
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting the default way
+        window.location.href = 'invest.html'; // Redirect to invest.html
+    });
+</script>
+
+</body>
+</html>
